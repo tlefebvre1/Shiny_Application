@@ -1,9 +1,11 @@
 ---
 title: "Shiny Application and Reproducible Pitch"
-subtitle: "Volume of an $n$-ball and area of an $n$-sphere"
 author: "Thibaut Lefebvre"
 date: "29 January 2017"
-output: slidy_presentation
+output:
+  beamer_presentation: default
+  slidy_presentation: default
+subtitle: Volume of an $n$-ball and area of an $n$-sphere
 ---
 
 ```{r setup, include=FALSE}
@@ -56,6 +58,7 @@ Please note that those (rather simple) results could also have been derived from
 ## Web application functionality
 
 The application can be found at:
+<https://tlefebvre1.shinyapps.io/project/>
 
 - Pick the dimension $n$ (positive integer)
 - Pick the radius $r$ (positive real number)
