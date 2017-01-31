@@ -1,0 +1,65 @@
+---
+title: "Shiny Application and Reproducible Pitch"
+subtitle: "Volume of an $n$-ball and area of an $n$-sphere"
+author: "Thibaut Lefebvre"
+date: "29 January 2017"
+output: slidy_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## n-ball and n-sphere
+
+Let $n$ be a positive integer and $r$ be a positive real number.
+
+The Euclidean $n$-ball of radius $r$ is defined as the set of all points $x \in \mathbb{R}^n$ such that $\left\Vert x \right\Vert^2_2 \leq r^2$ where $\left\Vert \cdot \right\Vert_2$ refers to the usual Euclidean norm in $\mathbb{R}^n$. 
+
+(<https://en.wikipedia.org/wiki/Euclidean_distance>)
+
+The Euclidean $n$-sphere of radius $r$ is defined as the set of all points $x \in \mathbb{R}^{n+1}$ such that $\left\Vert x \right\Vert^2_2 = r^2$. Please note that an $n$-sphere lives in a space of dimension $n+1$ (for example, a classical sphere is an object of dimension $2$ embedded in the Euclidean space of dimension $3$).
+
+We refer the reader to the two following articles on Wikipedia for more informations regarding $n$-ball and $n$-sphere:
+
+<https://en.wikipedia.org/wiki/Ball_(mathematics)>
+
+<https://en.wikipedia.org/wiki/N-sphere>
+
+## Volume of an $n$-ball and surface area of an $n$-sphere
+
+The volume of an $n$-ball of radius $r$ can be calculated thanks to the following formula:
+$$V_n(r) = \frac{\pi^{\frac{n}{2}}}{\Gamma(1+\frac{n}{2})}r^n$$
+where $\Gamma$ is the gamma function (<https://en.wikipedia.org/wiki/Gamma_function>).
+
+The surface area of an $n$-sphere is given by the formula below:
+$$S_n(r) = \frac{2\pi^{\frac{n}{2}}}{\Gamma(\frac{n}{2})}r^{n-1}$$
+See the following Wikipedia articles for a formal proof of each formula:
+
+<https://en.wikipedia.org/wiki/Volume_of_an_n-ball>
+
+<https://en.wikipedia.org/wiki/N-sphere>
+
+## Example
+
+For $n = 3$ and $r = 1$ the volume of the unit ball is:
+```{r volume, echo = TRUE}
+pi^(3/2) / gamma(1+3/2)
+```
+while the surface area of the associated sphere is:
+```{r surface, echo = TRUE}
+2*pi^(3/2) / gamma(3/2)
+```
+
+Please note that those (rather simple) results could also have been derived from the well-known expressions $V_3(r) = \frac{4}{3}\pi r^3$ and $S_3(r) = 4\pi r^2$ (which are actually special cases of the formulas given on the previous slide).
+
+## Web application functionality
+
+The application can be found at:
+
+- Pick the dimension $n$ (positive integer)
+- Pick the radius $r$ (positive real number)
+
+The application computes the volume $V_n(r)$ of the $n$-ball and the surface area $S_n(r)$ of the $n$-sphere according to the formulas presented in the previous slides.
+
+
